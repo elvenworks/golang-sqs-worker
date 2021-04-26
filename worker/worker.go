@@ -111,7 +111,7 @@ func (worker *Worker) Start(ctx context.Context, h Handler) {
 // poll launches goroutine per received message and wait for all message to be processed
 func (worker *Worker) run(h Handler, messages []*sqs.Message) {
 	numMessages := len(messages)
-	worker.Log.Info(fmt.Sprintf("worker: Received %d messages", numMessages))
+	// worker.Log.Info(fmt.Sprintf("worker: Received %d messages", numMessages))
 
 	var wg sync.WaitGroup
 	wg.Add(numMessages)
@@ -145,7 +145,7 @@ func (worker *Worker) handleMessage(m *sqs.Message, h Handler) error {
 	if err != nil {
 		return err
 	}
-	worker.Log.Debug(fmt.Sprintf("worker: deleted message from queue: %s", aws.StringValue(m.ReceiptHandle)))
+	// worker.Log.Debug(fmt.Sprintf("worker: deleted message from queue: %s", aws.StringValue(m.ReceiptHandle)))
 
 	return nil
 }
