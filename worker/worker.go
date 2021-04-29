@@ -132,7 +132,7 @@ func (worker *Worker) handleMessage(m *sqs.Message, h Handler) error {
 	var err error
 	err = h.HandleMessage(m)
 	if _, ok := err.(InvalidEventError); ok {
-		worker.Log.Error(err.Error())
+		// worker.Log.Error(err.Error())
 	} else if err != nil {
 		return err
 	}

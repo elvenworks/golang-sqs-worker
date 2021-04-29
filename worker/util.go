@@ -1,8 +1,6 @@
 package worker
 
 import (
-	"fmt"
-
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sqs"
@@ -32,7 +30,7 @@ func getQueueURL(client QueueAPI, queueName string) (queueURL string) {
 	}
 	response, err := client.GetQueueUrl(params)
 	if err != nil {
-		fmt.Println(err.Error())
+		// fmt.Println(err.Error())
 		return
 	}
 	queueURL = aws.StringValue(response.QueueUrl)
