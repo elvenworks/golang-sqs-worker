@@ -120,7 +120,7 @@ func (worker *Worker) run(h Handler, messages []*sqs.Message) {
 			// launch goroutine
 			defer wg.Done()
 			if err := worker.handleMessage(m, h); err != nil {
-				worker.Log.Error(err.Error())
+				// worker.Log.Error(err.Error())
 			}
 		}(messages[i])
 	}
