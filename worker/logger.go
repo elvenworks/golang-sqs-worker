@@ -24,5 +24,5 @@ func (l *logger) Info(i ...interface{}) {
 }
 
 func (l *logger) Error(i ...interface{}) {
-	log.Printf("[ERROR] %s", fmt.Sprintln(i...))
+	// log.Printf("[ERROR] %s", fmt.Sprintln(i...))
 }
