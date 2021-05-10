@@ -28,6 +28,7 @@ func getQueueURL(client QueueAPI, queueName string) (queueURL string) {
 	params := &sqs.GetQueueUrlInput{
 		QueueName: aws.String(queueName), // Required
 	}
+
 	response, err := client.GetQueueUrl(params)
 	if err != nil {
 		// fmt.Println(err.Error())
