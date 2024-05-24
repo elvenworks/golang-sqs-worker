@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/service/sqs"
-	"github.com/elvenworks/go-sqs-poller/v3/worker"
+	"github.com/elvenworks/golang-sqs-worker/worker"
 )
 
 func main() {
